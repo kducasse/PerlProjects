@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+use warnings;
+use 5.010;
+use Math::Trig;
+
+# 1.  Write a program that calculates the circumference of a circle with a radius of 12.5.
+# C = 2*PI*r 
+my $radius = 12.5;
+my $circumference = 2 * pi * $radius;
+say "The circumference of a circle with a radius of $radius is $circumference\n";
+
+# 2-3. Modify the code above to accept user input
+
+print "Enter radius value: ";
+
+chomp($radius = <STDIN>);
+if ($radius < 0) {
+    say "The circumference is 0";
+} else {
+    $circumference = 2 * pi * $radius;
+    say "The circumference of a circle with a radius of $radius is $circumference";
+}

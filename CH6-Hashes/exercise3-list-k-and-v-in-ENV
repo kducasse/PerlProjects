@@ -1,0 +1,9 @@
+#!/usr/bin/perl -w
+use 5.010;
+use strict;
+
+my @sorted_keys = sort keys %ENV;
+
+foreach my $key (@sorted_keys) {
+    say "$key => $ENV{$key}";
+}

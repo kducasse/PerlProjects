@@ -1,0 +1,26 @@
+#!/usr/bin/perl -w
+use 5.010;
+use strict;
+
+# Write a program that reads a series of words (with one word per line)
+# until end-of-input, then prints a summary of how many times a word is seen
+# Hint: remember that when an undefined value is used as if it were a number, Perl
+# automatically converts it to 0
+
+say "Enter a series of words. For example: fred, barney, fred, dino, wilma, fred.";
+chomp(my @words = <STDIN>);
+my %word_freq = ();
+
+foreach my $word (@words) {
+    $word_freq{$word} += 1;
+}
+
+# Method 1
+foreach my $word (keys %word_freq) { # need the keyword `keys`
+    say "$word was seen $word_freq{$word} times";
+}
+
+# Method 2
+while (my ($word, $freq) = each %word_freq) { # need the keyword `each`
+    say "$word was seen $freq";
+}

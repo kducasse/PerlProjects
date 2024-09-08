@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+use warnings;
+use 5.010;
+
+print "Enter a number: ";
+chomp($x = <STDIN>);
+print "Enter another number: ";
+chomp($y = <STDIN>);
+
+say "The product of $x and $y is ". ($x * $y);

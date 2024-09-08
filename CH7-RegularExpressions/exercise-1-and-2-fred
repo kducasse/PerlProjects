@@ -1,0 +1,13 @@
+#!/usr/bin/perl -w
+use strict;
+use 5.010;
+use autodie;
+
+open my $input_fh, '<', 'test.txt';
+
+while (<$input_fh>) {
+    if (/(f|F|)red/) { # EVEN better is /[fF]red/
+        say
+    }
+}
+close $input_fh;

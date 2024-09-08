@@ -1,0 +1,23 @@
+#!/usr/bin/perl -w
+use 5.010;
+use strict;
+
+greet("Fred");
+greet("Barney");
+greet("Wilma");
+greet("Betty");
+
+sub greet {
+    state @seen;
+    (my $name) = @_;
+    # Could also have done the following:
+    # `my $name = shift`
+    # This shifts the first argument off of @_ and assigns it to $name
+
+    if (@seen == 0) {
+        print "Hi $name! You are the first one here!\n";
+    } else {
+        print "Hi $name! I've seen: @seen\n";
+    }
+    push @seen, $name;
+}

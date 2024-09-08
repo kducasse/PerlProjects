@@ -1,0 +1,17 @@
+#!/usr/bin/perl -w
+use 5.010;
+
+# 3. Write a program that reads a list of strings (on seperate lines) until end of input
+#    Then it should print the code in code point order.  That is, if you enter the strings
+#    fred, barney, wilma, betty, the output should show barney betty fred wilma.  Are all
+#    of the strings on one line in the output or on seperate lines?  Could you make the output
+#    appear in either style?
+
+# 1. In a list context, list of strings printed on seperate lines
+print "Enter a list of strings:\n";
+# print sort <STDIN>; 
+
+# 2. In a list context, list of strings printed on same line 
+chomp(my @list_of_strings = <STDIN>);
+@sorted = sort @list_of_strings;
+print "@sorted\n";

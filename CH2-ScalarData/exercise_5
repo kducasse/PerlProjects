@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+use warnings;
+use 5.010;
+
+print "Enter a word or sentence: ";
+$string = <STDIN>;
+print "Enter the number of times you want the word or string printed: ";
+chomp($num = <STDIN>);
+
+say $string x $num;

@@ -1,0 +1,11 @@
+#!/usr/bin/perl -w
+use strict;
+use autodie;
+use 5.010;
+
+open my $input_fh, "<", "test.txt";
+
+while (<$input_fh>) {
+    print if (/wilma.*fred|fred.*wilma/);
+}
+close $input_fh;

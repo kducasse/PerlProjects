@@ -1,0 +1,27 @@
+#!/usr/bin/perl -w
+use strict;
+use 5.010;
+use autodie;
+
+# Note: It is standard to use a scalar for file handlers
+open my $input_fh, '<', 'input_file';
+
+# Note: You need to use the diamond operator
+while (my $line = <$input_fh>) { 
+    print "$line\n";
+}
+
+# Don't forget to close the connection
+close $input_fh;
+
+# Writing to a file
+open my $output_fh, '>', 'output_file';
+
+# This will always overwrite what is in a file
+print $output_fh "Hello, my name is Kara Ducasse\n";
+print $output_fh "What is your name?\n";
+
+close $output_fh;
+
+# To append:
+# open my $filename_fh, '>>' 'file_name';

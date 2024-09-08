@@ -1,0 +1,22 @@
+#!/usr/bin/perl -w
+use 5.010;
+use strict;
+
+my %family_names = (
+    Jerry => "Smoarn",
+    Kara => "Dukes",
+    Amalie => "Sojourner",
+    Camy => "Brighten",
+);
+
+# Also valid hash
+# my %family_names = qw(
+#     Jerry Smoarn
+#     Kara Dukes
+#     Amalie Sojourner
+#     Camy Brighten
+# );
+
+say "Enter a name:";
+chomp(my $first_name = <STDIN>); # You need to chomp this value in this case.  Otherwise it will read the new line as part of the key
+say "The corresponding family name is $family_names{$first_name}";

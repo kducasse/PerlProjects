@@ -1,0 +1,7 @@
+#!/usr/bin/perl
+
+use 5.010;
+
+print "Hello, world!\n";
+
+say "This is Hello World with an automatic new line.  Need to use the `use 5.010` though.";

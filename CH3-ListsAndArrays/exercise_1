@@ -1,0 +1,16 @@
+#!/usr/bin/perl -w
+use 5.010;
+
+# 1. Write a program that reads a list of strings on seperate lines 
+#    until end of input and prints out the list in reverse order
+
+# By default, macOS (formerly OS X and Mac OS X) software recognizes 
+# EOF when Control-D is pressed at the beginning of a line
+
+my @lines = <STDIN>;
+my @reversed_lines = reverse(@lines);
+print @reversed_lines;
+
+# simpler solution
+print reverse <STDIN>; # automaticaly assumed that this is a list context
+

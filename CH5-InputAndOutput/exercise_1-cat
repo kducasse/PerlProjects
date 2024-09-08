@@ -1,0 +1,31 @@
+#!/usr/bin/perl -w
+use 5.010;
+use strict;
+
+# Write a program that acts like `cat`, but reverses the order of the output lines.
+# perl exercise_1-cat test_1.txt test_2.txt
+
+# Regular order: 
+# My name is Kara Ducasse (test_1.txt)
+# Holy, Holy, Holy is the LORD God almighty! (test_2.txt)
+
+# The code `print reverse <>`; reads all lines from all 
+# files specified in the command line (or from STDIN if no files are provided), 
+# puts them in a list, reverses the entire list, and prints the result. 
+print reverse <>; # list context 
+
+# Down below, it will not reverse the order of the output lines as the lines are being read one by one.  
+# In fact, it will not even reverse the string, because it is in a list context
+# while (<>) {
+#     print reverse "$_\n"; # list context.
+# }
+
+# Scalar context, it will actually reverse 'Hello' -> 'olleH'
+my $output = reverse 'Hello';
+print "$output\n";
+
+# Since "Hello\n" is treated as a single element (a string) in list context, 
+# reversing it does nothing because there's only one element in the "list."
+print reverse "Hello\n";
+print reverse "Hello", "My friend";
+

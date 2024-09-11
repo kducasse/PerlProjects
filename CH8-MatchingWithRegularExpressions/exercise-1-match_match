@@ -1,0 +1,15 @@
+#!/usr/bin/perl -w
+use strict;
+
+# This next line of code is used when you get to Chapter 9.
+my $what = 'beforematchafter';
+
+while (<>) {
+    chomp;
+    if (/match/i) {
+	print "Matched: |$`<$&>$'|\n";
+    } else {
+	print "No match.\n";
+    }
+
+}

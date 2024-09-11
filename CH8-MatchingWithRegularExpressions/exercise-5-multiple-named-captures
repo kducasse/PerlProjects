@@ -1,0 +1,25 @@
+#!/usr/bin/perl -w
+use strict;
+
+# Modify the program from the previous exercise so that immediately
+# following the word ending in `a` it will also capture up to 5 characters
+# (if there are any characters) in a separate capture variables.
+my $what = 'I saw Wilma yesterday'; 
+# wilma
+# I, Wilma!
+
+while (<>) {
+    chomp;
+    if (/
+        (?<group1>\b\w*a\b) # a word ending in a
+        (?<group2>.{0,5})   # up to five characters following
+        /ixs                # case insensitive, allow to have whitespace, 
+        ) {                 # s changes the '.' character to act like [\d\D]
+	  
+      print "Matched: |$`<$&>$'|\n";
+      print "It contains $+{group1} and $+{group2}\n";
+    } else {
+	  print "No match.\n";
+    }
+
+}

@@ -1,0 +1,20 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+my $what = 'wilma'; 
+# barney
+# Mrs. Wilma 
+# Flinstone 
+# wilma&fred
+
+while (<>) {
+    chomp;
+    if (/(\w+a)\z/) {
+	print "Matched: |$`<$&>$'|\n";
+    print "It contains $1\n";
+    } else {
+	print "No match.\n";
+    }
+
+}

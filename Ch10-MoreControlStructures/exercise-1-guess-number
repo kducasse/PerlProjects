@@ -1,0 +1,18 @@
+#!/usr/bin/perl -w
+use 5.010;
+use strict;
+
+my $num = int(1 + rand 100);
+print "Guess the number from 1 to 100\n";
+
+while ((my $user_input = <STDIN>) ne $num) {
+    if ($user_input > $num) {
+        print "too high\n";
+    } elsif ($user_input < $num) {
+        print "too low\n";
+    } else {
+        last;
+    }
+}
+
+print "You won! the secret number was $num\n";

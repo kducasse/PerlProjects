@@ -1,0 +1,12 @@
+#!/usr/bin/perl -w
+use strict;
+
+$^I = ".out"; # Magical variable in conjuction with '<>'
+
+while (<>) {
+    s/Fred/Larry/ig; 
+    # 'print;' will continue to modify the file because, 
+    # when $^I is set, print writes to the file being edited.
+    print;
+    print STDOUT $_; # This prints the modified line to the console
+}

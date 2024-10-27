@@ -7,11 +7,13 @@ use 5.010;
 #    of the strings on one line in the output or on seperate lines?  Could you make the output
 #    appear in either style?
 
-# 1. In a list context, list of strings printed on seperate lines
+# Method 1. In a list context, list of strings printed on seperate lines
 print "Enter a list of strings:\n";
 # print sort <STDIN>; 
 
-# 2. In a list context, list of strings printed on same line 
+# Method 2. In a list context, list of strings printed on same line 
+# because we chomped off the new line.  When printed, there will be spaces
+# between the elements
 chomp(my @list_of_strings = <STDIN>);
 @sorted = sort @list_of_strings;
-print "@sorted\n";
+print "@sorted";

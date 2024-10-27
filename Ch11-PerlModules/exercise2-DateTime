@@ -1,0 +1,32 @@
+#!/usr/bin/perl -w
+use strict;
+use 5.010;
+
+use DateTime;
+
+=pod
+Write a program using DateTime to compute the interval between
+and a date that you enter as the year, month and day on the command line
+
+Run File: perl exercise2-DateTime 1960 9 30 
+=cut
+
+my $year = $ARGV[0];
+my $month = $ARGV[1];
+my $day = $ARGV[2];
+
+my $dt = DateTime->new(
+    year => $year,
+    month =>  $month,
+    day =>  $day
+);
+
+my $current_dt = DateTime->now;
+
+my $duration = $current_dt - $dt;
+
+my @units = $duration->in_units( qw{years months days} );
+printf '%d years, %d months, and %d days', @units;
+
+
+

@@ -1,0 +1,11 @@
+#!/usr/bin/perl -w
+use 5.010;
+use strict;
+use Module::CoreList;
+
+# Install the CPAN module from CPAN.  Print a list of all the modules that 
+# came with Perl 5.14.
+
+my %modules = %{ $Module::CoreList::version{5.014}};
+
+print join "\n", keys %modules;
